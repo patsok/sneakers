@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'icon font';
+    src: url('../assets/fonts/icon-font.woff') format('woff'),
+         url('../assets/fonts/icon-font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root{
+    --primary-color: hsl(26, 100%, 55%);
+    --primary-color-light: hsl(25, 100%, 94%);
+    --accent-color: hsl(223, 64%, 98%);
+    --primary-text-color: hsl(220, 13%, 13%);
+    --secondary-text-color: hsl(219, 9%, 45%);
+    --accent-text-color: hsl(220, 14%, 75%);
+    --background-color: hsl(0, 0%, 100%);
+    --lightbox-background: hsl(0, 0%, 0%);
+    --font-stack: 'Kumbh Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-icon: 'icon font', 'Kumbh Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --max-width: 1110px;
+    --section-padding: 24px;
+}
+

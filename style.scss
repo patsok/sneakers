@@ -1,0 +1,30 @@
+@import './sass/variables';
+@import './pages/_sections/nav/nav';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-stack);
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+[class*='icon-'] {
+    display: inline-block;
+    font-family: var(--font-icon);
+}
+
+body.preload * {
+    animation-duration: 0s !important;
+    -webkit-animation-duration: 0s !important;
+    transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+}

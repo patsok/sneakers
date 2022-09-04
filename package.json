@@ -10,6 +10,7 @@
     "release": "git subtree push --prefix dist origin gh-pages"
   },
   "devDependencies": {
+    "sass": "^1.54.8",
     "vite": "^3.0.7"
   }
 }

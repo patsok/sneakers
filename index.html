@@ -1,13 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+  <title>Vite App</title>
+</head>
+
+<body class="preload">
+  <div id="app">
+    <div class="nav">
+      <div class="nav-wrapper">
+        <div class="nav-hamburger">
+          <div class="nav-hamburger__btn icon-menu">D</div>
+          <div class="nav-hamburger__btn nav-hamburger__btn--is-hidden icon-close">B</div>
+        </div>
+        <a href="#" class="nav__logo"><img src="./assets/images/logo.svg" alt="sneakers logo"></a>
+        <div class="nav__items">
+          <ul>
+            <a href="#Collections"><li>Collections</li></a>
+            <a href="#Men"><li>Men</li></a>
+            <a href="#Women"><li>Women</li></a>
+            <a href="#About"><li>About</li></a>
+            <a href="#Contact"><li>Contact</li></a>
+          </ul>
+        </div>
+        <div class="nav__items--mobile nav__items--mobile--is-hidden">
+          <ul>
+            <a href="#Collections"><li>Collections</li></a>
+            <a href="#Men"><li>Men</li></a>
+            <a href="#Women"><li>Women</li></a>
+            <a href="#About"><li>About</li></a>
+            <a href="#Contact"><li>Contact</li></a>
+          </ul>
+        </div>
+        <div class="nav__shadow nav__shadow--is-hidden"></div>
+        <div class="nav-account">
+          <div class="nav-account__cart icon-cart">A</div>
+          <img class="nav-account__photo" src="./assets/images/image-avatar.png" alt="user photo">
+        </div>
+      </div>
+    </div>
+    <div class="product">
+      <div class="product-gallery"></div>
+      <div class="product-prop">
+        <div class="product__company">SNEAKER COMPANY</div>
+        <div class="product__heading">Fall Limited Edition Sneakers</div>
+        <div class="product__desc">
+          <p>
+            These low-profile sneakers are your perfect casual wear companion. Featuring a
+            durable rubber outer sole, they’ll withstand everything the weather can offer.
+          </p>
+        </div>
+        <div class="product-prize">
+          <div class="product-prize__current"></div>
+          <div class="product-prize__discount"></div>
+          <div class="product-prize__old"></div>
+        </div>
+        <div class="product__amount"></div>
+        <div class="product__cart">
+          <img src="./assets/images/icon-cart.svg" alt="cart">
+          <!-- <div class="icon-cart"></div> -->
+          <span>Add to cart</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>
