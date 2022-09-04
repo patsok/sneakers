@@ -1,3 +1,5 @@
+@import './_partials/account-cartbox/account-cartbox.scss';
+
 .nav {
     --nav-items-color: var(--secondary-text-color);
     --nav-items-padding-block: 43px;
@@ -17,6 +19,7 @@
         border-bottom: 1px solid var(--accent-color);
         max-width: var(--max-width);
         margin: 0 auto;
+        position: relative;
     }
 
     .nav-hamburger {
@@ -25,6 +28,10 @@
 
     .nav__logo {
         margin-right: 40px;
+
+        img{
+            width: clamp(100px,37vw,138px);
+        }
     }
 
     .nav__items {
@@ -72,7 +79,7 @@
 
         &--is-visible {
             animation: show-nav2 .3s ease-in forwards;
-            z-index: 10;
+            z-index: 20;
         }
 
         @keyframes show-nav2 {
@@ -133,7 +140,7 @@
         }
 
         &--is-visible {
-            z-index: 5;
+            z-index: 11;
             animation: show-nav .5s ease-out forwards;
         }
 
@@ -144,6 +151,7 @@
 
             100% {
                 opacity: 0.75;
+                visibility: visible;
             }
 
         }
@@ -157,6 +165,7 @@
             100% {
                 opacity: 0;
                 z-index: -5;
+                visibility: hidden;
             }
 
         }
@@ -170,6 +179,7 @@
         align-items: center;
         gap: clamp(22px, 6vw, 46px);
         margin-left: auto;
+        position: relative;
 
         &__photo {
             width: clamp(28px, 7vw, 50px);
@@ -186,9 +196,60 @@
             cursor: pointer;
             color: var(--secondary-text-color);
             font-size: 21px;
+            position: relative;
 
             &:hover {
                 color: var(--primary-text-color);
+            }
+
+            .cart-items-number {
+                position: absolute;
+                top: -3px;
+                right: -5px;
+                background-color: var(--primary-color);
+                color: var(--background-color);
+                font-weight: 700;
+                font-size: 10px;
+                line-height: 120%;
+                border-radius: 6px;
+                width: 19px;
+                height: 13px;
+                text-align: center;
+
+                span{
+                    position: relative;
+                    top:-1px;
+                }
+
+                &--is-hidden {
+                    animation: remove-number .2s ease-in forwards;
+                }
+            
+                &--is-visible {
+                    animation: add-number .2s ease-out forwards;
+                }
+            
+                @keyframes add-number {
+                    0% {
+                        opacity: 0;
+                    }
+            
+                    100% {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            
+                @keyframes remove-number {
+                    0% {
+                        opacity: 1;            
+                    }
+            
+                    100% {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                }
             }
         }
     }

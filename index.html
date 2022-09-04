@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8" />
-  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
   <title>Vite App</title>
@@ -20,50 +19,128 @@
         <a href="#" class="nav__logo"><img src="./assets/images/logo.svg" alt="sneakers logo"></a>
         <div class="nav__items">
           <ul>
-            <a href="#Collections"><li>Collections</li></a>
-            <a href="#Men"><li>Men</li></a>
-            <a href="#Women"><li>Women</li></a>
-            <a href="#About"><li>About</li></a>
-            <a href="#Contact"><li>Contact</li></a>
+            <a href="#Collections">
+              <li>Collections</li>
+            </a>
+            <a href="#Men">
+              <li>Men</li>
+            </a>
+            <a href="#Women">
+              <li>Women</li>
+            </a>
+            <a href="#About">
+              <li>About</li>
+            </a>
+            <a href="#Contact">
+              <li>Contact</li>
+            </a>
           </ul>
         </div>
         <div class="nav__items--mobile nav__items--mobile--is-hidden">
           <ul>
-            <a href="#Collections"><li>Collections</li></a>
-            <a href="#Men"><li>Men</li></a>
-            <a href="#Women"><li>Women</li></a>
-            <a href="#About"><li>About</li></a>
-            <a href="#Contact"><li>Contact</li></a>
+            <a href="#Collections">
+              <li>Collections</li>
+            </a>
+            <a href="#Men">
+              <li>Men</li>
+            </a>
+            <a href="#Women">
+              <li>Women</li>
+            </a>
+            <a href="#About">
+              <li>About</li>
+            </a>
+            <a href="#Contact">
+              <li>Contact</li>
+            </a>
           </ul>
         </div>
         <div class="nav__shadow nav__shadow--is-hidden"></div>
         <div class="nav-account">
-          <div class="nav-account__cart icon-cart">A</div>
+          <div class="nav-account__cart icon-cart"><span>A</span><div class="cart-items-number cart-items-number--is-hidden"><span>0</span></div></div>
           <img class="nav-account__photo" src="./assets/images/image-avatar.png" alt="user photo">
+        </div>
+        <div class="account-cartbox account-cartbox--is-hidden">
+          <div class="account-cartbox__heading">Cart</div>
+          <div class="account-cartbox-products">
+            <div class="products-single products-single--is-hidden">
+              <img class ="products-single__image" src="./assets/images/image-product-1-thumbnail.jpg" alt="">
+              <div class="products-single-prop">
+                <div class="products-single__heading">Fall Limited Edition Sneakers</div>
+                <div class="products-single-prop__price">$125.00</div>
+                <div class="products-single-prop__amount">3</div>
+                <div class="products-single-prop__all-price">$375.00</div>
+              </div>
+              <div class="products-single__delete icon-delete">C</div>
+            </div>
+            <div class="account-cartbox__empty">Your cart is empty.</div>
+
+          </div>
+          <div class="account-cartbox-btn account-cartbox-btn--is-hidden">Checkout</div>
         </div>
       </div>
     </div>
     <div class="product">
-      <div class="product-gallery"></div>
-      <div class="product-prop">
-        <div class="product__company">SNEAKER COMPANY</div>
-        <div class="product__heading">Fall Limited Edition Sneakers</div>
-        <div class="product__desc">
-          <p>
-            These low-profile sneakers are your perfect casual wear companion. Featuring a
-            durable rubber outer sole, they’ll withstand everything the weather can offer.
-          </p>
+      <div class="product-wrapper">
+        <div class="product-gallery">
+          <div class="swiper-gallery">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./assets/images/image-product-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/images/image-product-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/images/image-product-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/images/image-product-4.jpg" />
+              </div>
+            </div>
+          </div>
+          <div thumbsSlider="" class="swiper-gallery-thumbs">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./assets/images/image-product-1-thumbnail.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/images/image-product-2-thumbnail.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/images/image-product-3-thumbnail.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/images/image-product-4-thumbnail.jpg" />
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="product-prize">
-          <div class="product-prize__current"></div>
-          <div class="product-prize__discount"></div>
-          <div class="product-prize__old"></div>
-        </div>
-        <div class="product__amount"></div>
-        <div class="product__cart">
-          <img src="./assets/images/icon-cart.svg" alt="cart">
-          <!-- <div class="icon-cart"></div> -->
-          <span>Add to cart</span>
+        <div class="product-prop">
+          <div class="product__company">SNEAKER COMPANY</div>
+          <div class="product__heading">Fall Limited Edition Sneakers</div>
+          <div class="product__desc">
+            <p>
+              These low-profile sneakers are your perfect casual wear companion. Featuring a
+              durable rubber outer sole, they’ll withstand everything the weather can offer.
+            </p>
+          </div>
+          <div class="product-price">
+            <div class="product-price__current">125.00</div>
+            <div class="product-price__discount">50</div>
+            <div class="product-price__old">250.00</div>
+          </div>
+          <div class="product-controls">
+            <div class="product-amount">
+              <div class="product-amount__minus icon-product">E</div>
+              <div class="product-amount__number">1</div>
+              <div class="product-amount__plus icon-product">G</div>
+            </div>
+            <div class="product-controls__cart">
+              <div class="icon-cart">A</div>
+              <span>Add to cart</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

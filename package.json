@@ -1,6 +1,5 @@
 {
   "name": "sneakers",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -9,8 +8,19 @@
     "preview": "vite preview",
     "release": "git subtree push --prefix dist origin gh-pages"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patsok/sneakers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patsok/sneakers/issues"
+  },
+  "homepage": "https://github.com/patsok/sneakers#readme",
   "devDependencies": {
     "sass": "^1.54.8",
+    "swiper": "^8.3.2",
     "vite": "^3.0.7"
   }
 }

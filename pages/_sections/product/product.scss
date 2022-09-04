@@ -1,0 +1,33 @@
+@import './_partials/product-gallery/product-gallery.scss';
+@import './_partials/product-prop/product-prop.scss';
+
+
+.product{
+    padding-inline: var(--section-padding);
+    padding-block: 90px;
+    background-color: var(--background-color);
+
+    .product-wrapper{
+        display: flex;
+        gap: 125px;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: var(--max-width);
+        margin: 0 auto;
+    }
+
+    .product-gallery{
+        width: 100%;
+    }
+
+    .product-prop{
+        width: 100%;
+    }
+
+    @media screen and (max-width: 830px) {
+        .product-wrapper{
+            flex-direction: column;
+        }
+    }
+}

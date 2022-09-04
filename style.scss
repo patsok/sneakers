@@ -1,5 +1,6 @@
 @import './sass/variables';
-@import './pages/_sections/nav/nav';
+@import '@/nav/nav';
+@import '@/product/product';
 
 *,
 *::before,
@@ -21,6 +22,8 @@ a {
 [class*='icon-'] {
     display: inline-block;
     font-family: var(--font-icon);
+    user-select: none;
+    font-weight: 400;
 }
 
 body.preload * {
