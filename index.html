@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABO1BMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////l9Pff8fS54ein2eOn2eL9/v684unr9vj7/f7c8PSl2eKHzNil2OLv+Prz+vue1eB3xdOq2uPm9Pf29/vy8/n3/Py13+eEyteZ097P6u/2+/zByeKOm8r8/f7u+Pq+4+qOz9uU0dzo9fjb4O5meLbh5fH0+vvV7fHx+fv8/P2Gk8Wbps+44eim2eLW2+xkdrXO1Oit3OWttthperja3u7u+Pn6+/2hrNJneLfFy+P7+/23v92IlcbN0ufx8/nj5/Kbp9BsfbltfrqAj8ORnsvg5PD+/v/v8ffQ1em0vduqtNfn6vS/61TcAAAAHHRSTlMAAAQqbK3Z8v0DN5ff+xqJ6jbC/kHBAjjp3qz8qSKHsgAAAAFiS0dEAf8CLd4AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfiChMPAx5FOtlkAAABSUlEQVQ4y4WTZ2OCMBCGc4IMEXAPjB10771t7dLuXbv3/v+/oNigIYjN+4HcJU9CcgMhVxASxLAkK4oshUUhBIgVqBEtqmNXelSLqF4EwDBjmFHMNADoejyRxD4lE/EGAZCScICkFCGc/YHrDkHOACON2yhtOABkTNxWZgYQZHPeqWKH18tlAakas6ezi3E1FQl5Fuhm3LyARD0AsIs9vSSmIrJwC9DXPzA4NEx8C0ktwMjo2PiE3YgFkokxOdUEpmdm5+YXXEBGCjEWl5bpHVZKq2tlMq+gAjHWNza9r9jarpD5QuMX1Z3dv3Fvn72T3LzkweFRfSgd+xJGn3lyeuZ8K+csYNFAXVzWrqr+bDmBoqG+vqnd3t3bDOCE2push8en55fXNzZZTLrfPz6/vn+oX083t2C4JccvWm7Z8xuH33r85v2v/X8Bp/FiyVLnL/0AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMTAtMTlUMTU6MDM6MzArMDI6MDCzEaEaAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTEwLTE5VDE1OjAzOjMwKzAyOjAwwkwZpgAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg==" type="image/x-icon">
-  <title>Vite App</title>
-  <script type="module" crossorigin src="/sneakers/assets/main.77bc3378.js"></script>
-  <link rel="stylesheet" href="/sneakers/assets/index.e36d163f.css">
+  <title>Sneaker shop</title>
+  <script type="module" crossorigin src="/sneakers/assets/main.245e8bca.js"></script>
+  <link rel="stylesheet" href="/sneakers/assets/index.db67eabb.css">
 </head>
 
 <body class="preload">
@@ -59,14 +59,16 @@
         </div>
         <div class="nav__shadow nav__shadow--is-hidden"></div>
         <div class="nav-account">
-          <div class="nav-account__cart icon-cart"><span>A</span><div class="cart-items-number cart-items-number--is-hidden"><span>0</span></div></div>
+          <div class="nav-account__cart icon-cart"><span>A</span>
+            <div class="cart-items-number cart-items-number--is-hidden"><span>0</span></div>
+          </div>
           <img class="nav-account__photo" src="/sneakers/assets/image-avatar.88751761.png" alt="user photo">
         </div>
         <div class="account-cartbox account-cartbox--is-hidden">
           <div class="account-cartbox__heading">Cart</div>
           <div class="account-cartbox-products">
             <div class="products-single products-single--is-hidden">
-              <img class ="products-single__image" src="/sneakers/assets/image-product-1-thumbnail.4e7f5e07.jpg" alt="">
+              <img class="products-single__image" src="/sneakers/assets/image-product-1-thumbnail.4e7f5e07.jpg" alt="">
               <div class="products-single-prop">
                 <div class="products-single__heading">Fall Limited Edition Sneakers</div>
                 <div class="products-single-prop__price">$125.00</div>
@@ -85,36 +87,91 @@
     <div class="product">
       <div class="product-wrapper">
         <div class="product-gallery">
-          <div class="swiper-gallery">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="/sneakers/assets/image-product-1.0c6fe8e3.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/sneakers/assets/image-product-2.a8acaa06.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/sneakers/assets/image-product-3.5a0b3bac.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/sneakers/assets/image-product-4.b130dea1.jpg" />
-              </div>
+          <section id="main-slider" class="splide" aria-label="My Awesome Gallery">
+            <div class="splide__arrows">
+              <button class="splide__arrow splide__arrow--prev">
+                <div class="icon-previous">H</div>
+              </button>
+              <button class="splide__arrow splide__arrow--next">
+                <div class="icon-next">F</div>
+              </button>
             </div>
-          </div>
-          <div thumbsSlider="" class="swiper-gallery-thumbs">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="/sneakers/assets/image-product-1-thumbnail.4e7f5e07.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/sneakers/assets/image-product-2-thumbnail.ad60b1cc.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/sneakers/assets/image-product-3-thumbnail.46570324.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/sneakers/assets/image-product-4-thumbnail.7125519d.jpg" />
-              </div>
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="/sneakers/assets/image-product-1.0c6fe8e3.jpg" alt="" />
+                </li>
+                <li class="splide__slide">
+                  <img src="/sneakers/assets/image-product-2.a8acaa06.jpg" alt="" />
+                </li>
+                <li class="splide__slide">
+                  <img src="/sneakers/assets/image-product-3.5a0b3bac.jpg" alt="" />
+                </li>
+                <li class="splide__slide">
+                  <img src="/sneakers/assets/image-product-4.b130dea1.jpg" alt="" />
+                </li>
+              </ul>
+            </div>
+          </section>
+          <ul id="thumbnails" class="thumbnails">
+            <li class="thumbnail">
+              <img src="/sneakers/assets/image-product-1-thumbnail.4e7f5e07.jpg" alt="" />
+            </li>
+            <li class="thumbnail">
+              <img src="/sneakers/assets/image-product-2-thumbnail.ad60b1cc.jpg" alt="" />
+            </li>
+            <li class="thumbnail">
+              <img src="/sneakers/assets/image-product-3-thumbnail.46570324.jpg" alt="" />
+            </li>
+            <li class="thumbnail">
+              <img src="/sneakers/assets/image-product-4-thumbnail.7125519d.jpg" alt="" />
+            </li>
+          </ul>
+
+          <div class="slider-lightbox">
+            <div class="lightbox-shadow lightbox-shadow--is-hidden"></div>
+            <div class="gallery-lightbox-wrapper">
+              <section id="main-slider-lightbox" class="splide" aria-label="My Awesome Gallery Lightbox">
+                <div class="icon-close">B</div>
+                <div class="splide__arrows">
+                  <button class="splide__arrow splide__arrow--prev">
+                    <div class="icon-previous">H</div>
+                  </button>
+                  <button class="splide__arrow splide__arrow--next">
+                    <div class="icon-next">F</div>
+                  </button>
+                </div>
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide">
+                      <img src="/sneakers/assets/image-product-1.0c6fe8e3.jpg" alt="" />
+                    </li>
+                    <li class="splide__slide">
+                      <img src="/sneakers/assets/image-product-2.a8acaa06.jpg" alt="" />
+                    </li>
+                    <li class="splide__slide">
+                      <img src="/sneakers/assets/image-product-3.5a0b3bac.jpg" alt="" />
+                    </li>
+                    <li class="splide__slide">
+                      <img src="/sneakers/assets/image-product-4.b130dea1.jpg" alt="" />
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <ul id="thumbnails-lightbox" class="thumbnails-lightbox">
+                <li class="thumbnail-lightbox">
+                  <img src="/sneakers/assets/image-product-1-thumbnail.4e7f5e07.jpg" alt="" />
+                </li>
+                <li class="thumbnail-lightbox">
+                  <img src="/sneakers/assets/image-product-2-thumbnail.ad60b1cc.jpg" alt="" />
+                </li>
+                <li class="thumbnail-lightbox">
+                  <img src="/sneakers/assets/image-product-3-thumbnail.46570324.jpg" alt="" />
+                </li>
+                <li class="thumbnail-lightbox">
+                  <img src="/sneakers/assets/image-product-4-thumbnail.7125519d.jpg" alt="" />
+                </li>
+              </ul>
             </div>
           </div>
         </div>
