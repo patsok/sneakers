@@ -3,9 +3,16 @@
 .nav {
     --nav-items-color: var(--secondary-text-color);
     --nav-items-padding-block: 43px;
-    --nav-items-border-size: 4px;
+    
+    //for longer border than menu item
     --nav-items-padding-inline: 4px;
-    padding-inline: var(--section-padding);
+    
+    --nav-items-border-size: 4px;
+    --menu-item-gap: 32px;
+
+    --account-photo-maxsize: 50px;
+
+    padding-inline: var(--section-inline-padding);
     position: sticky;
     top: 0px;
     background-color: var(--background-color);
@@ -44,15 +51,16 @@
             display: flex;
             list-style: none;
             //gap value minus additional padding for hover border
-            column-gap: calc(32px - var(--nav-items-padding-inline));
+            column-gap: calc(var(--menu-item-gap) - var(--nav-items-padding-inline) * 2);
 
             a {
                 color: var(--nav-items-color);
                 padding: var(--nav-items-padding-block) var(--nav-items-padding-inline);
 
                 &:hover {
+                    transition: color .2s;
                     padding-top: var(--nav-items-padding-block);
-                    //padding bottom minus border size to eliminate item jump
+                    //padding bottom minus border size to eliminate item jump on hover
                     padding-bottom: calc(var(--nav-items-padding-block) - var(--nav-items-border-size));
                     border-bottom: var(--nav-items-border-size) solid var(--primary-color);
                     color: var(--primary-text-color);
@@ -116,10 +124,13 @@
 
             a {
                 color: var(--nav-items-color);
+                //padding minus border size to eliminate item jump on hover
                 padding: 10px calc(15px + var(--nav-items-border-size) * 2);
 
                 &:hover {
+                    transition: color .2s;
                     color: var(--primary-text-color);
+                    //border twice for better view
                     border-left: calc(var(--nav-items-border-size) * 2) solid var(--primary-color);
                     padding: 10px 15px;
                 }
@@ -134,14 +145,13 @@
         width: 100vw;
         height: 100vh;
         background-color: var(--lightbox-background);
-        // z-index: -5;
 
         &--is-hidden {
             animation: hid-nav .3s ease-in forwards;
         }
 
         &--is-visible {
-            z-index: 3;
+            z-index: 10;
             animation: show-nav .5s ease-out forwards;
         }
 
@@ -172,7 +182,6 @@
         }
     }
 
-
     .nav-account {
         justify-self: center;
         display: flex;
@@ -183,8 +192,8 @@
         position: relative;
 
         &__photo {
-            width: clamp(28px, 7vw, 50px);
-            border: 2px solid var(--background-color);
+            width: clamp(28px, 7vw, var(--account-photo-maxsize));
+            border: 2px solid rgba(0,0,0,0);
             cursor: pointer;
 
             &:hover {
@@ -255,7 +264,7 @@
         }
     }
 
-    @media screen and (max-width: 830px) {
+    @media screen and (max-width: $breakpoint) {
         .nav-wrapper {
             padding-block: 20px;
         }
@@ -288,11 +297,8 @@
             }
         }
 
-
         .nav__items {
             display: none;
         }
-
-        .nav-account {}
     }
 }

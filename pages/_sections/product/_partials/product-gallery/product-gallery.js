@@ -1,8 +1,5 @@
 import Splide from '@splidejs/splide';
-// import '@splidejs/splide/css/core';
 import '@splidejs/splide/css/skyblue';
-
-
 
 var splide = new Splide("#main-slider", {
     // width: 445,
@@ -10,10 +7,10 @@ var splide = new Splide("#main-slider", {
     pagination: false,
     cover: true,
     breakpoints: {
-		830: {
+        850: {
             height: 300,
-		},
-  }
+        },
+    }
 });
 
 var thumbnails = document.getElementsByClassName("thumbnail");
@@ -44,18 +41,26 @@ splide.on("mounted move", function () {
 
 splide.mount();
 
-// const splideLightboxContainer = document.querySelector('#main-slider-lightbox');
+const splideLightboxMain = document.querySelector('#main-slider-lightbox');
 const splideThumbnailsLightboxContainer = document.querySelector('#thumbnails-lightbox');
 const splideLightboxContainer = document.querySelector('.slider-lightbox');
 const splideLightboxShadow = document.querySelector('.lightbox-shadow');
-
-
+let splideWidth = 0;
 
 const openGallery = () => {
     history.pushState(null, null, document.URL);
     splideLightboxContainer.classList.add('is-visible');
     splideLightboxShadow.classList.add('lightbox-shadow--is-visible');
     splideLightboxShadow.classList.remove('lightbox-shadow--is-hidden');
+    splideWidth = document.querySelector('#main-slider-lightbox .splide__slide').clientWidth;
+
+    const splideSlidesLightbox = document.querySelectorAll('#main-slider-lightbox .splide__slide');
+    console.log(splideSlidesLightbox);
+    splideSlidesLightbox.forEach(slide => {
+        console.log(slide.clientWidth)
+        slide.style.height = `${slide.clientWidth}px`;
+    }
+    )
 }
 
 const closeGallery = () => {
@@ -64,7 +69,7 @@ const closeGallery = () => {
     splideLightboxShadow.classList.add('lightbox-shadow--is-hidden');
 }
 
-const splideSlides = document.querySelectorAll('.splide__slide');
+const splideSlides = document.querySelectorAll('#main-slider .splide__slide');
 
 splideSlides.forEach(slide => {
     slide.addEventListener('click', openGallery)
@@ -72,9 +77,17 @@ splideSlides.forEach(slide => {
 
 var splideLightbox = new Splide("#main-slider-lightbox", {
     width: 550,
-    height: 550,
+    // height: 550,
     pagination: false,
-    cover: true
+    cover: true,
+    heightRatio: 1.0,
+    autoHeight: true,
+    // mediaQuery: 'max',
+    //     breakpoints: {
+    // 		830: {
+    //             height: 300,
+    // 		},
+    //   }
 });
 
 var thumbnailsLightbox = document.getElementsByClassName("thumbnail-lightbox");
@@ -105,13 +118,16 @@ splideLightbox.on("mounted move", function () {
 
 splideLightbox.mount();
 
-const lightboxCloseButton = document.querySelector('.slider-lightbox .icon-close');
+const lightboxCloseButton = document.querySelector('.slider-lightbox .font-icon-close');
 
-lightboxCloseButton.addEventListener('click',closeGallery);
+lightboxCloseButton.addEventListener('click', closeGallery);
 
-window.addEventListener('popstate',()=>{
+window.addEventListener('popstate', () => {
     const state = document.querySelector('.lightbox-shadow--is-visible');
-    if (state !== null){
+    if (state !== null) {
         closeGallery();
     }
 })
+
+splideLightboxShadow.addEventListener('click', closeGallery);
+

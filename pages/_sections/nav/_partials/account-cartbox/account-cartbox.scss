@@ -1,20 +1,23 @@
 .account-cartbox {
+    --box-width: 360px;
+    --font-size: 16px;
+    --product-photo-size: 50px;
+
     position: absolute;
     top: 90px;
     right: clamp(-80px,-1vw,0px);
-    width: 360px;
+    width: var(--box-width);
     box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.503143);
     border-radius: 10px;
     background-color: var(--background-color);
     z-index: 10;
     display: flex;
     flex-direction: column;
-    // margin-right: clamp(-75px,-5vw,0px);
 
     & &__heading {
         padding: 24px;
         font-weight: 700;
-        font-size: 16px;
+        font-size: var(--font-size);
         line-height: 125%;
         color: var(--primary-text-color);
         border-bottom: 1px solid var(--accent-color);
@@ -32,9 +35,9 @@
         align-items: center;
 
         &__image {
-            max-width: 50px;
+            width: var(--product-photo-size);
             border-radius: 4px;
-            margin-right: 16px;
+            margin-right: clamp(8px,2vw,16px);
         }
 
         &__heading{
@@ -43,7 +46,7 @@
 
         &-prop {
             font-weight: 400;
-            font-size: 16px;
+            font-size: var(--font-size);
             line-height: 162%;
             display: flex;
             flex-wrap: wrap;
@@ -93,7 +96,7 @@
     & &__empty {
         text-align: center;
         font-weight: 700;
-        font-size: 16px;
+        font-size: var(--font-size);
         line-height: 162%;
         color: var(--secondary-text-color);
 
@@ -109,7 +112,7 @@
         background-color: var(--primary-color);
         border-radius: 10px;
         font-weight: 700;
-        font-size: 16px;
+        font-size: var(--font-size);
         line-height: 125%;
         text-align: center;
         cursor: pointer;
@@ -156,15 +159,8 @@
         }
     }
     @media screen and (max-width:500px) {
-        width: 100%;
-
-        .products-single-prop{
-            font-size: 14px;
-
-        }
-        .products-single__image {
-            max-width: 40px;
-            margin-right: 8px;
-        }
+        --box-width: 100%;
+        --font-size: 14px;
+        --product-photo-size: 40px;
     }
 }

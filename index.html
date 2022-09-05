@@ -13,8 +13,8 @@
     <div class="nav">
       <div class="nav-wrapper">
         <div class="nav-hamburger">
-          <div class="nav-hamburger__btn icon-menu">D</div>
-          <div class="nav-hamburger__btn nav-hamburger__btn--is-hidden icon-close">B</div>
+          <div class="nav-hamburger__btn nav-hamburger__btn--is-visible font-icon-menu">D</div>
+          <div class="nav-hamburger__btn nav-hamburger__btn--is-hidden font-icon-close">B</div>
         </div>
         <a href="#" class="nav__logo"><img src="./assets/images/logo.svg" alt="sneakers logo"></a>
         <div class="nav__items">
@@ -57,7 +57,7 @@
         </div>
         <div class="nav__shadow nav__shadow--is-hidden"></div>
         <div class="nav-account">
-          <div class="nav-account__cart icon-cart"><span>A</span>
+          <div class="nav-account__cart font-icon-cart"><span>A</span>
             <div class="cart-items-number cart-items-number--is-hidden"><span>0</span></div>
           </div>
           <img class="nav-account__photo" src="./assets/images/image-avatar.png" alt="user photo">
@@ -73,7 +73,7 @@
                 <div class="products-single-prop__amount">3</div>
                 <div class="products-single-prop__all-price">$375.00</div>
               </div>
-              <div class="products-single__delete icon-delete">C</div>
+              <div class="products-single__delete font-icon-delete">C</div>
             </div>
             <div class="account-cartbox__empty">Your cart is empty.</div>
 
@@ -85,58 +85,60 @@
     <div class="product">
       <div class="product-wrapper">
         <div class="product-gallery">
-          <section id="main-slider" class="splide" aria-label="My Awesome Gallery">
-            <div class="splide__arrows">
-              <button class="splide__arrow splide__arrow--prev">
-                <div class="icon-previous">H</div>
-              </button>
-              <button class="splide__arrow splide__arrow--next">
-                <div class="icon-next">F</div>
-              </button>
-            </div>
-            <div class="splide__track">
-              <ul class="splide__list">
-                <li class="splide__slide">
-                  <img src="./assets/images/image-product-1.jpg" alt="" />
-                </li>
-                <li class="splide__slide">
-                  <img src="./assets/images/image-product-2.jpg" alt="" />
-                </li>
-                <li class="splide__slide">
-                  <img src="./assets/images/image-product-3.jpg" alt="" />
-                </li>
-                <li class="splide__slide">
-                  <img src="./assets/images/image-product-4.jpg" alt="" />
-                </li>
-              </ul>
-            </div>
-          </section>
-          <ul id="thumbnails" class="thumbnails">
-            <li class="thumbnail">
-              <img src="./assets/images/image-product-1-thumbnail.jpg" alt="" />
-            </li>
-            <li class="thumbnail">
-              <img src="./assets/images/image-product-2-thumbnail.jpg" alt="" />
-            </li>
-            <li class="thumbnail">
-              <img src="./assets/images/image-product-3-thumbnail.jpg" alt="" />
-            </li>
-            <li class="thumbnail">
-              <img src="./assets/images/image-product-4-thumbnail.jpg" alt="" />
-            </li>
-          </ul>
+          <div class="main-slider">
+            <section id="main-slider" class="splide" aria-label="My Awesome Gallery">
+              <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                  <div class="font-icon-previous">H</div>
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                  <div class="font-icon-next">F</div>
+                </button>
+              </div>
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img src="./assets/images/image-product-1.jpg" alt="" />
+                  </li>
+                  <li class="splide__slide">
+                    <img src="./assets/images/image-product-2.jpg" alt="" />
+                  </li>
+                  <li class="splide__slide">
+                    <img src="./assets/images/image-product-3.jpg" alt="" />
+                  </li>
+                  <li class="splide__slide">
+                    <img src="./assets/images/image-product-4.jpg" alt="" />
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <ul id="thumbnails" class="thumbnails">
+              <li class="thumbnail">
+                <img src="./assets/images/image-product-1-thumbnail.jpg" alt="" />
+              </li>
+              <li class="thumbnail">
+                <img src="./assets/images/image-product-2-thumbnail.jpg" alt="" />
+              </li>
+              <li class="thumbnail">
+                <img src="./assets/images/image-product-3-thumbnail.jpg" alt="" />
+              </li>
+              <li class="thumbnail">
+                <img src="./assets/images/image-product-4-thumbnail.jpg" alt="" />
+              </li>
+            </ul>
+          </div>
 
           <div class="slider-lightbox">
             <div class="lightbox-shadow lightbox-shadow--is-hidden"></div>
             <div class="gallery-lightbox-wrapper">
               <section id="main-slider-lightbox" class="splide" aria-label="My Awesome Gallery Lightbox">
-                <div class="icon-close">B</div>
+                <div class="font-icon-close">B</div>
                 <div class="splide__arrows">
                   <button class="splide__arrow splide__arrow--prev">
-                    <div class="icon-previous">H</div>
+                    <div class="font-icon-previous">H</div>
                   </button>
                   <button class="splide__arrow splide__arrow--next">
-                    <div class="icon-next">F</div>
+                    <div class="font-icon-next">F</div>
                   </button>
                 </div>
                 <div class="splide__track">
@@ -189,12 +191,12 @@
           </div>
           <div class="product-controls">
             <div class="product-amount">
-              <div class="product-amount__minus icon-product">E</div>
+              <div class="product-amount__minus font-icon-product">E</div>
               <div class="product-amount__number">1</div>
-              <div class="product-amount__plus icon-product">G</div>
+              <div class="product-amount__plus font-icon-product">G</div>
             </div>
             <div class="product-controls__cart">
-              <div class="icon-cart">A</div>
+              <div class="font-icon-cart">A</div>
               <span>Add to cart</span>
             </div>
           </div>

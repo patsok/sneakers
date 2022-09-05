@@ -1,15 +1,15 @@
 @import './_partials/product-gallery/product-gallery.scss';
 @import './_partials/product-prop/product-prop.scss';
 
-
-.product{
-    padding-inline: var(--section-padding);
-    padding-block: 90px;
+.product {
+    padding-inline: var(--section-inline-padding);
+    padding-block: var(--section-block-padding);
     background-color: var(--background-color);
+    --section-gap: 125px;
 
-    .product-wrapper{
+    .product-wrapper {
         display: flex;
-        gap: clamp(50px,5vw,125px);
+        gap: clamp(50px, 5vw, var(--section-gap));
         justify-content: space-between;
         align-items: center;
         width: 100%;
@@ -17,25 +17,28 @@
         margin: 0 auto;
     }
 
-    .product-gallery{
+    .product-gallery {
         width: 100%;
     }
 
-    .product-prop{
+    .product-prop {
         width: 100%;
     }
 
-    @media screen and (max-width: 830px) {
+    @media screen and (max-width: $breakpoint) {
+        --section-gap: 24px;
+
         padding-inline: 0;
         padding-block: 0;
-        padding-bottom: 60px;
-        .product-wrapper{
+        padding-bottom: var(--section-block-padding);
+
+        .product-wrapper {
             flex-direction: column;
-            gap:24px;
+            gap: var(--section-gap)
         }
 
-        .product-prop{
-            padding-inline: var(--section-padding);
+        .product-prop {
+            padding-inline: var(--section-inline-padding);
         }
     }
 }
