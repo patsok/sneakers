@@ -82,7 +82,7 @@
             align-items: center;
             border-radius: 10px;
             background-color: var(--accent-color);
-            min-width: 156px;
+            min-width: clamp(120px,15vw,156px);
 
             &__number {
                 font-family: var(--font-stack);

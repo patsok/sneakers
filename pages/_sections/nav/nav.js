@@ -5,6 +5,8 @@ const navShadow = document.querySelector('.nav__shadow');
 const navMobileItems = document.querySelectorAll('.nav__items--mobile ul li');
 
 const openMenu = () => {
+    history.pushState(null, null, document.URL);
+
     hamburgerCloseButton.classList.add('nav-hamburger__btn--is-visible');
     hamburgerCloseButton.classList.remove('nav-hamburger__btn--is-hidden');
     hamburgerButton.classList.remove('nav-hamburger__btn--is-visible');
@@ -30,7 +32,6 @@ navShadow.addEventListener('click',closeMenu);
 
 window.addEventListener('popstate',()=>{
     const state = document.querySelector('.nav__items--mobile--is-visible');
-    console.log(state);
     if (state !== null){
         closeMenu();
     }

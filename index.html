@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
-  <title>Vite App</title>
+  <title>Sneaker shop</title>
 </head>
 
 <body class="preload">
@@ -57,14 +57,16 @@
         </div>
         <div class="nav__shadow nav__shadow--is-hidden"></div>
         <div class="nav-account">
-          <div class="nav-account__cart icon-cart"><span>A</span><div class="cart-items-number cart-items-number--is-hidden"><span>0</span></div></div>
+          <div class="nav-account__cart icon-cart"><span>A</span>
+            <div class="cart-items-number cart-items-number--is-hidden"><span>0</span></div>
+          </div>
           <img class="nav-account__photo" src="./assets/images/image-avatar.png" alt="user photo">
         </div>
         <div class="account-cartbox account-cartbox--is-hidden">
           <div class="account-cartbox__heading">Cart</div>
           <div class="account-cartbox-products">
             <div class="products-single products-single--is-hidden">
-              <img class ="products-single__image" src="./assets/images/image-product-1-thumbnail.jpg" alt="">
+              <img class="products-single__image" src="./assets/images/image-product-1-thumbnail.jpg" alt="">
               <div class="products-single-prop">
                 <div class="products-single__heading">Fall Limited Edition Sneakers</div>
                 <div class="products-single-prop__price">$125.00</div>
@@ -83,36 +85,91 @@
     <div class="product">
       <div class="product-wrapper">
         <div class="product-gallery">
-          <div class="swiper-gallery">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="./assets/images/image-product-1.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./assets/images/image-product-2.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./assets/images/image-product-3.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./assets/images/image-product-4.jpg" />
-              </div>
+          <section id="main-slider" class="splide" aria-label="My Awesome Gallery">
+            <div class="splide__arrows">
+              <button class="splide__arrow splide__arrow--prev">
+                <div class="icon-previous">H</div>
+              </button>
+              <button class="splide__arrow splide__arrow--next">
+                <div class="icon-next">F</div>
+              </button>
             </div>
-          </div>
-          <div thumbsSlider="" class="swiper-gallery-thumbs">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="./assets/images/image-product-1-thumbnail.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./assets/images/image-product-2-thumbnail.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./assets/images/image-product-3-thumbnail.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./assets/images/image-product-4-thumbnail.jpg" />
-              </div>
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="./assets/images/image-product-1.jpg" alt="" />
+                </li>
+                <li class="splide__slide">
+                  <img src="./assets/images/image-product-2.jpg" alt="" />
+                </li>
+                <li class="splide__slide">
+                  <img src="./assets/images/image-product-3.jpg" alt="" />
+                </li>
+                <li class="splide__slide">
+                  <img src="./assets/images/image-product-4.jpg" alt="" />
+                </li>
+              </ul>
+            </div>
+          </section>
+          <ul id="thumbnails" class="thumbnails">
+            <li class="thumbnail">
+              <img src="./assets/images/image-product-1-thumbnail.jpg" alt="" />
+            </li>
+            <li class="thumbnail">
+              <img src="./assets/images/image-product-2-thumbnail.jpg" alt="" />
+            </li>
+            <li class="thumbnail">
+              <img src="./assets/images/image-product-3-thumbnail.jpg" alt="" />
+            </li>
+            <li class="thumbnail">
+              <img src="./assets/images/image-product-4-thumbnail.jpg" alt="" />
+            </li>
+          </ul>
+
+          <div class="slider-lightbox">
+            <div class="lightbox-shadow lightbox-shadow--is-hidden"></div>
+            <div class="gallery-lightbox-wrapper">
+              <section id="main-slider-lightbox" class="splide" aria-label="My Awesome Gallery Lightbox">
+                <div class="icon-close">B</div>
+                <div class="splide__arrows">
+                  <button class="splide__arrow splide__arrow--prev">
+                    <div class="icon-previous">H</div>
+                  </button>
+                  <button class="splide__arrow splide__arrow--next">
+                    <div class="icon-next">F</div>
+                  </button>
+                </div>
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide">
+                      <img src="./assets/images/image-product-1.jpg" alt="" />
+                    </li>
+                    <li class="splide__slide">
+                      <img src="./assets/images/image-product-2.jpg" alt="" />
+                    </li>
+                    <li class="splide__slide">
+                      <img src="./assets/images/image-product-3.jpg" alt="" />
+                    </li>
+                    <li class="splide__slide">
+                      <img src="./assets/images/image-product-4.jpg" alt="" />
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <ul id="thumbnails-lightbox" class="thumbnails-lightbox">
+                <li class="thumbnail-lightbox">
+                  <img src="./assets/images/image-product-1-thumbnail.jpg" alt="" />
+                </li>
+                <li class="thumbnail-lightbox">
+                  <img src="./assets/images/image-product-2-thumbnail.jpg" alt="" />
+                </li>
+                <li class="thumbnail-lightbox">
+                  <img src="./assets/images/image-product-3-thumbnail.jpg" alt="" />
+                </li>
+                <li class="thumbnail-lightbox">
+                  <img src="./assets/images/image-product-4-thumbnail.jpg" alt="" />
+                </li>
+              </ul>
             </div>
           </div>
         </div>

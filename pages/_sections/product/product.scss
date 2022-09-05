@@ -9,7 +9,7 @@
 
     .product-wrapper{
         display: flex;
-        gap: 125px;
+        gap: clamp(50px,5vw,125px);
         justify-content: space-between;
         align-items: center;
         width: 100%;
@@ -26,8 +26,16 @@
     }
 
     @media screen and (max-width: 830px) {
+        padding-inline: 0;
+        padding-block: 0;
+        padding-bottom: 60px;
         .product-wrapper{
             flex-direction: column;
+            gap:24px;
+        }
+
+        .product-prop{
+            padding-inline: var(--section-padding);
         }
     }
 }

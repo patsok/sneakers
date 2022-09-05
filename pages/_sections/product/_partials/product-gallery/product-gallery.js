@@ -1,52 +1,117 @@
-import 'swiper/scss';
-import 'swiper/scss/autoplay';
-import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
+import Splide from '@splidejs/splide';
+// import '@splidejs/splide/css/core';
+import '@splidejs/splide/css/skyblue';
 
-import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
 
-Swiper.use([Navigation, Pagination, Autoplay]);
 
-var swiper2 = new Swiper('.swiper-gallery-thumbs', {
-    slidesPerView: 4,
-    freeMode: true,
-    watchSlidesProgress: true,
-    spaceBetween: 10,
+var splide = new Splide("#main-slider", {
+    // width: 445,
+    height: 445,
+    pagination: false,
+    cover: true,
+    breakpoints: {
+		830: {
+            height: 300,
+		},
+  }
 });
 
-var swiper = new Swiper(".swiper-gallery", {
-    spaceBetween: 10,
-    slidesPerView: 1,
-    thumbs: {
-        swiper: swiper2,
-      },
-  });
+var thumbnails = document.getElementsByClassName("thumbnail");
+var current;
+
+for (var i = 0; i < thumbnails.length; i++) {
+    initThumbnail(thumbnails[i], i);
+}
+
+function initThumbnail(thumbnail, index) {
+    thumbnail.addEventListener("click", function () {
+        splide.go(index);
+    });
+}
+
+splide.on("mounted move", function () {
+    var thumbnail = thumbnails[splide.index];
+
+    if (thumbnail) {
+        if (current) {
+            current.classList.remove("is-active");
+        }
+
+        thumbnail.classList.add("is-active");
+        current = thumbnail;
+    }
+});
+
+splide.mount();
+
+// const splideLightboxContainer = document.querySelector('#main-slider-lightbox');
+const splideThumbnailsLightboxContainer = document.querySelector('#thumbnails-lightbox');
+const splideLightboxContainer = document.querySelector('.slider-lightbox');
+const splideLightboxShadow = document.querySelector('.lightbox-shadow');
 
 
 
-// var swiper = new Swiper('.swiper-gallery', {
-//   loop: true,
-//     speed: 1000,
-//     autoplay: {
-//       delay: 3000,
-//       disableOnInteraction: false
-//     },
-//   centeredSlides: true,
-//   loop: true,
-//   slidesPerView: 1,
-//   spaceBetween: 0,
-//   pagination: {
-//     el: ".swiper-pagination",
-//       clickable: true,
-//   },
-//   breakpoints: {
-//     1400: {
-//        slidesPerView: 2,
-//        spaceBetween: -250,
-//     },
-//     1800: {
-//       slidesPerView: 3,
-//       spaceBetween: -50,
-//    },
-//   },
-// });
+const openGallery = () => {
+    history.pushState(null, null, document.URL);
+    splideLightboxContainer.classList.add('is-visible');
+    splideLightboxShadow.classList.add('lightbox-shadow--is-visible');
+    splideLightboxShadow.classList.remove('lightbox-shadow--is-hidden');
+}
+
+const closeGallery = () => {
+    splideLightboxContainer.classList.remove('is-visible');
+    splideLightboxShadow.classList.remove('lightbox-shadow--is-visible');
+    splideLightboxShadow.classList.add('lightbox-shadow--is-hidden');
+}
+
+const splideSlides = document.querySelectorAll('.splide__slide');
+
+splideSlides.forEach(slide => {
+    slide.addEventListener('click', openGallery)
+});
+
+var splideLightbox = new Splide("#main-slider-lightbox", {
+    width: 550,
+    height: 550,
+    pagination: false,
+    cover: true
+});
+
+var thumbnailsLightbox = document.getElementsByClassName("thumbnail-lightbox");
+var currentLightbox;
+
+for (var i = 0; i < thumbnailsLightbox.length; i++) {
+    initThumbnailLightbox(thumbnailsLightbox[i], i);
+}
+
+function initThumbnailLightbox(thumbnailLightbox, index) {
+    thumbnailLightbox.addEventListener("click", function () {
+        splideLightbox.go(index);
+    });
+}
+
+splideLightbox.on("mounted move", function () {
+    var thumbnailLightbox = thumbnailsLightbox[splideLightbox.index];
+
+    if (thumbnailLightbox) {
+        if (currentLightbox) {
+            currentLightbox.classList.remove("lightbox-is-active");
+        }
+
+        thumbnailLightbox.classList.add("lightbox-is-active");
+        currentLightbox = thumbnailLightbox;
+    }
+});
+
+splideLightbox.mount();
+
+const lightboxCloseButton = document.querySelector('.slider-lightbox .icon-close');
+
+lightboxCloseButton.addEventListener('click',closeGallery);
+
+window.addEventListener('popstate',()=>{
+    const state = document.querySelector('.lightbox-shadow--is-visible');
+    if (state !== null){
+        closeGallery();
+    }
+})
