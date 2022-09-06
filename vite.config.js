@@ -2,7 +2,7 @@ import path, { resolve } from 'path'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/sneakers',
+  base: '/sneakers/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '/pages/_sections'),
