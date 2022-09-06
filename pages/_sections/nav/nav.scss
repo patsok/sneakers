@@ -81,9 +81,13 @@
         font-weight: 700;
         line-height: 144%;
         padding: 82px 25px 0px 0px;
+        opacity: 0;
+        visibility: none;
 
         &--is-hidden {
             animation: hid-nav2 .3s ease-in forwards;
+            visibility: none;
+
         }
 
         &--is-visible {

@@ -2,19 +2,22 @@
 @import './_partials/product-prop/product-prop.scss';
 
 .product {
+    --section-gap: 125px;
+    --padding-section-indentation: 48px;
+
     padding-inline: var(--section-inline-padding);
     padding-block: var(--section-block-padding);
     background-color: var(--background-color);
-    --section-gap: 125px;
 
     .product-wrapper {
         display: flex;
-        gap: clamp(50px, 5vw, var(--section-gap));
+        gap: clamp(50px, 7vw, var(--section-gap));
         justify-content: space-between;
         align-items: center;
         width: 100%;
         max-width: var(--max-width);
         margin: 0 auto;
+        padding-inline: var(--padding-section-indentation);
     }
 
     .product-gallery {
@@ -26,6 +29,7 @@
     }
 
     @media screen and (max-width: $breakpoint) {
+        --padding-section-indentation: 0px;
         --section-gap: 24px;
 
         padding-inline: 0;

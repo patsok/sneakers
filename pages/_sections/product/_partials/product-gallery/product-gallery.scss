@@ -9,18 +9,17 @@
     --navigation-lightbox-size: 56px;
     --navigation-mobile-size: 40px;
 
-    max-width: 100%;
-
     .main-slider {
+
         .splide {
-            margin: 0 auto;
-            max-width: var(--product-photo-main-size);
+            width: clamp(300px, 40vw, var(--product-photo-main-size));
 
             &__arrows {
                 display: none;
             }
 
             &__slide {
+                width: 100%;
                 border-radius: var(--product-photo-radius);
                 margin-right: var(--product-photo-scroll-gap);
             }
@@ -28,27 +27,29 @@
 
         .thumbnails {
             display: flex;
-            margin: 32px auto;
+            margin-top: 32px;
             padding: 0;
             justify-content: center;
-            width: var(--product-photo-main-size);
+            width: clamp(300px, 40vw, var(--product-photo-main-size));
             gap: var(--product-thumbnails-gap);
+            gap: clamp(16px, 3vw, var(--product-thumbnails-gap));
+
         }
 
         .thumbnail {
-            //thumbnail size + border size to avoid content jump on active
-            width: calc(var(--product-thumbnail-size) + var(--product-thumbnail-border-size));
-            height: calc(var(--product-thumbnail-size) + var(--product-thumbnail-border-size));
             overflow: hidden;
             list-style: none;
             opacity: 1;
             border-radius: 10px;
             border: var(--product-thumbnail-border-size) solid rgba(0, 0, 0, 0);
             cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-content: center;
 
             img {
-                width: var(--product-thumbnail-size);
-                height: auto;
+                width: 100%;
+                height: 100%;
             }
 
             &:hover {
@@ -141,6 +142,7 @@
             &__arrow {
                 background-color: var(--background-color);
                 color: var(--lightbox-background);
+                font-size: 16px;
                 border-radius: 50%;
                 width: var(--navigation-lightbox-size);
                 height: var(--navigation-lightbox-size);
@@ -154,10 +156,12 @@
                 }
 
                 &:disabled {
+                    transition: opacity .1s;
                     opacity: 0;
                 }
 
                 &:hover {
+                    transition: color .2s;
                     color: var(--primary-color);
                 }
             }
@@ -223,7 +227,7 @@
     }
 
     @media screen and (max-width:$breakpoint) {
-        --product-photo-main-size: unset;
+        --product-photo-main-size: 100%;
         --product-photo-radius: 0px;
 
         .main-slider {
@@ -232,8 +236,17 @@
             }
 
             .splide {
+                width: 100%;
+
+                &__slide {
+                    width: 100%;
+                    border-radius: var(--product-photo-radius);
+                    margin-right: var(--product-photo-scroll-gap);
+                }
+
                 &__arrows {
                     display: unset;
+                    font-size: 12px;
                 }
 
                 &__arrow {
@@ -242,7 +255,6 @@
                     border-radius: 50%;
                     width: var(--navigation-mobile-size);
                     height: var(--navigation-mobile-size);
-                    font-size: 12px;
 
                     &--prev {
                         left: 16px
